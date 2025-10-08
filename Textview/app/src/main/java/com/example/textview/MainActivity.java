@@ -3,6 +3,7 @@ package com.example.textview;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         miTexto.setTypeface(null, Typeface.ITALIC);
         miTexto.setTextSize(24);
         miTexto.setTypeface(Typeface.SANS_SERIF);
-        Animation miAnimacion = AnimationUtils.loadAnimation(this,R.anim.animacion);
+        Animation miAnimacion = AnimationUtils.loadAnimation(this,R.anim.rotate);
         miAnimacion.setRepeatMode(Animation.RESTART);
         miAnimacion.setRepeatCount(20);
         miTexto.startAnimation(miAnimacion);
