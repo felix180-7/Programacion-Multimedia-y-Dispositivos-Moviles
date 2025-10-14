@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         TextView miTexto = (TextView) findViewById(R.id.texto);
-        miTexto.setText("Nuevo texto a mostrar");
+        miTexto.setText("Nuevo texto");
         miTexto.setTextColor(Color.parseColor("#0000FF"));
         miTexto.setTextColor(Color.BLACK);
         miTexto.setTypeface(null, Typeface.ITALIC);
