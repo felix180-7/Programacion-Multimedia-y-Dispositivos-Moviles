@@ -65,51 +65,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (barra.equals("0")) barra = "";
 
         if (id == R.id.boton1){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"1");
         }
         if (id == R.id.boton2){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"2");
         }
         if (id == R.id.boton3){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"3");
         }
         if (id == R.id.boton4){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"4");
         }
         if (id == R.id.boton5){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"5");
         }
         if (id == R.id.boton6){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"6");
         }
         if (id == R.id.boton7){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"7");
         }
         if (id == R.id.boton8){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"8");
         }
         if (id == R.id.boton9){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"9");
         }
         if (id == R.id.boton0){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"0");
@@ -117,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // es /
         if (id == R.id.botonE1){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             operador = "/";
@@ -126,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // es *
         if (id == R.id.botonE2){
             if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             operador = "*";
             c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
@@ -133,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         // es -
         if (id == R.id.botonE3){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             operador = "-";
@@ -141,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         // es +
         if (id == R.id.botonE6) {
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             operador = "+";
@@ -149,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         // es .
         if (id == R.id.botonE4){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             if (!barra.contains(".")) {
@@ -158,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // es =
         if (id == R.id.botonE5){
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             double b = barra.isEmpty() ? 0 : Double.parseDouble(barra);
@@ -175,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // es C (borrar último)
         if (id == R.id.botonC) {
+            if (barra.equals("-Infinity")) barra = "";
             if (barra.equals("Infinity")) barra = "";
             if (barra.equals("NaN")) barra = "";
             if (!barra.isEmpty()) barra = barra.substring(0, barra.length() - 1);
