@@ -1,26 +1,22 @@
 package com.example.ejerciciogridlayout;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private String operador = "";
+    private double c = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.grid);
+
         Button boton1  = findViewById(R.id.boton1);
         Button boton2  = findViewById(R.id.boton2);
         Button boton3  = findViewById(R.id.boton3);
@@ -43,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);
         boton3.setOnClickListener(this);
-        boton3.setOnClickListener(this);
         boton4.setOnClickListener(this);
         boton5.setOnClickListener(this);
         boton6.setOnClickListener(this);
@@ -59,96 +54,139 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botonE6.setOnClickListener(this);
         botonC.setOnClickListener(this);
         botonAC.setOnClickListener(this);
-
     }
 
     public void onClick(View view){
         TextView texto = findViewById(R.id.texto);
         int id = view.getId();
-        Log.i("boton1","se mete en boton 1");
 
-        String barra = (String) texto.getText();
+        String barra = texto.getText().toString();
 
         if (barra.equals("0")) barra = "";
 
         if (id == R.id.boton1){
-            Log.i("boton1","se mete en boton 1");
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"1");
-
         }
         if (id == R.id.boton2){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"2");
         }
         if (id == R.id.boton3){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"3");
         }
         if (id == R.id.boton4){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"4");
         }
         if (id == R.id.boton5){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"5");
         }
         if (id == R.id.boton6){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"6");
         }
         if (id == R.id.boton7){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"7");
         }
         if (id == R.id.boton8){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"8");
         }
         if (id == R.id.boton9){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"9");
         }
         if (id == R.id.boton0){
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
             texto.setText(barra+"0");
         }
 
         // es /
         if (id == R.id.botonE1){
-            texto.setText(barra+"/");
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            operador = "/";
+            c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            texto.setText("0");
         }
         // es *
         if (id == R.id.botonE2){
-            texto.setText(barra+"*");
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            operador = "*";
+            c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            texto.setText("0");
         }
         // es -
         if (id == R.id.botonE3){
-            texto.setText(barra+"-");
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            operador = "-";
+            c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            texto.setText("0");
+        }
+        // es +
+        if (id == R.id.botonE6) {
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            operador = "+";
+            c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            texto.setText("0");
         }
         // es .
         if (id == R.id.botonE4){
-            texto.setText(barra+".");
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            if (!barra.contains(".")) {
+                texto.setText(barra.isEmpty() ? "0." : barra+".");
+            }
         }
 
         // es =
         if (id == R.id.botonE5){
-
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            double b = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            double resultado = 0;
+            switch (operador){
+                case "+": resultado = c + b; break;
+                case "-": resultado = c - b; break;
+                case "*": resultado = c * b; break;
+                case "/": resultado = c / b; break;
+            }
+            texto.setText(""+resultado);
+            operador = "";
+            c = 0;
         }
 
-        // es +
-        if (id == R.id.botonE6) {
-            texto.setText(barra+"+");
-        }
-
-        // es AC
+        // es C (borrar último)
         if (id == R.id.botonC) {
-            String textoActual = texto.getText().toString();
-
-            if (textoActual.length() > 0) {
-                textoActual = textoActual.substring(0, textoActual.length() - 1);
-            }
-
-            if (textoActual.isEmpty()) {
-                textoActual = "0";
-            }
-            texto.setText(textoActual);
+            if (barra.equals("Infinity")) barra = "";
+            if (barra.equals("NaN")) barra = "";
+            if (!barra.isEmpty()) barra = barra.substring(0, barra.length() - 1);
+            if (barra.isEmpty()) barra = "0";
+            texto.setText(barra);
         }
-        
-        // es C
+
+        // es AC (borrar todo)
         if (id == R.id.botonAC) {
             texto.setText("0");
+            operador = "";
+            c = 0;
         }
-
     }
 }
