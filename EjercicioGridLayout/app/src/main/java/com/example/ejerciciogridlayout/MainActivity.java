@@ -64,119 +64,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (barra.equals("0")) barra = "";
 
-        if (id == R.id.boton1){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"1");
-        }
-        if (id == R.id.boton2){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"2");
-        }
-        if (id == R.id.boton3){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"3");
-        }
-        if (id == R.id.boton4){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"4");
-        }
-        if (id == R.id.boton5){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"5");
-        }
-        if (id == R.id.boton6){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"6");
-        }
-        if (id == R.id.boton7){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"7");
-        }
-        if (id == R.id.boton8){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"8");
-        }
-        if (id == R.id.boton9){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"9");
-        }
-        if (id == R.id.boton0){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            texto.setText(barra+"0");
-        }
+        if (id == R.id.boton1) texto.setText(barra+"1");
+        if (id == R.id.boton2) texto.setText(barra+"2");
+        if (id == R.id.boton3) texto.setText(barra+"3");
+        if (id == R.id.boton4) texto.setText(barra+"4");
+        if (id == R.id.boton5) texto.setText(barra+"5");
+        if (id == R.id.boton6) texto.setText(barra+"6");
+        if (id == R.id.boton7) texto.setText(barra+"7");
+        if (id == R.id.boton8) texto.setText(barra+"8");
+        if (id == R.id.boton9) texto.setText(barra+"9");
+        if (id == R.id.boton0) texto.setText(barra+"0");
 
-        // es /
-        if (id == R.id.botonE1){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
+        // Operadores: ahora se agrega al final de la barra en lugar de reiniciar
+        if (id == R.id.botonE1){ // /
             operador = "/";
             c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
-            texto.setText("0");
+            if (!barra.endsWith("/") && !barra.endsWith("*") && !barra.endsWith("+") && !barra.endsWith("-"))
+                texto.setText(barra+"/");
         }
-        // es *
-        if (id == R.id.botonE2){
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
+        if (id == R.id.botonE2){ // *
             operador = "*";
             c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
-            texto.setText("0");
+            if (!barra.endsWith("/") && !barra.endsWith("*") && !barra.endsWith("+") && !barra.endsWith("-"))
+                texto.setText(barra+"*");
         }
-        // es -
-        if (id == R.id.botonE3){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
+        if (id == R.id.botonE3){ // -
             operador = "-";
             c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
-            texto.setText("0");
+            if (!barra.endsWith("/") && !barra.endsWith("*") && !barra.endsWith("+") && !barra.endsWith("-"))
+                texto.setText(barra+"-");
         }
-        // es +
-        if (id == R.id.botonE6) {
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
+        if (id == R.id.botonE6){ // +
             operador = "+";
             c = barra.isEmpty() ? 0 : Double.parseDouble(barra);
-            texto.setText("0");
-        }
-        // es .
-        if (id == R.id.botonE4){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            if (!barra.contains(".")) {
-                texto.setText(barra.isEmpty() ? "0." : barra+".");
-            }
+            if (!barra.endsWith("/") && !barra.endsWith("*") && !barra.endsWith("+") && !barra.endsWith("-"))
+                texto.setText(barra+"+");
         }
 
-        // es =
+        // Punto decimal
+        if (id == R.id.botonE4){
+            if (!barra.contains(".")) texto.setText(barra.isEmpty() ? "0." : barra+".");
+        }
+
+        // Igual
         if (id == R.id.botonE5){
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
-            double b = barra.isEmpty() ? 0 : Double.parseDouble(barra);
+            double b = 0;
+            if (!barra.isEmpty()) {
+                String[] partes = barra.split("[\\+\\-\\*/]");
+                b = partes.length > 1 ? Double.parseDouble(partes[1]) : 0;
+            }
             double resultado = 0;
             switch (operador){
                 case "+": resultado = c + b; break;
@@ -189,17 +125,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c = 0;
         }
 
-        // es C (borrar último)
+        // C (borrar último)
         if (id == R.id.botonC) {
-            if (barra.equals("-Infinity")) barra = "";
-            if (barra.equals("Infinity")) barra = "";
-            if (barra.equals("NaN")) barra = "";
             if (!barra.isEmpty()) barra = barra.substring(0, barra.length() - 1);
             if (barra.isEmpty()) barra = "0";
             texto.setText(barra);
         }
 
-        // es AC (borrar todo)
+        // AC (borrar todo)
         if (id == R.id.botonAC) {
             texto.setText("0");
             operador = "";
