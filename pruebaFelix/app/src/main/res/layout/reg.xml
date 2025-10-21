@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0A7C1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"> <!-- Espacio superior añadido -->
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuario"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="36dp" />
+
+        <!-- Nombre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/editTextNombreRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu nombre"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Email -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo electrónico:"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/editTextEmailRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu correo"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Contraseña -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/editTextContrasenaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu contraseña"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:inputType="textPassword"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Botón de registro -->
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:background="#FFFFFF"
+            android:textColor="#F0A7C1"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Texto para volver al login -->
+        <TextView
+            android:id="@+id/textVolverLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes cuenta? Inicia sesión"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</ScrollView>
