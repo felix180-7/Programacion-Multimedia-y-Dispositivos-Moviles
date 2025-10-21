@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:text="Registrarse"
             android:background="#FFFFFF"
-            android:textColor="#F0A7C1"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:padding="12dp"
             android:layout_marginBottom="24dp" />
