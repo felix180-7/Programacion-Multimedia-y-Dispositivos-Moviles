@@ -3,7 +3,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout">
+
     <EditText
         android:id="@+id/etText"
         android:layout_width="410dp"
@@ -34,5 +36,40 @@
         android:id="@+id/spinner"
         >
     </Spinner>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opción 1"
+        android:id="@+id/cbox">
+    </CheckBox>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup">
+
+        <RadioButton
+            android:id="@+id/boton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opción1">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/boton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opción2">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/boton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opción3">
+        </RadioButton>
+
+    </RadioGroup>
 
 </LinearLayout>

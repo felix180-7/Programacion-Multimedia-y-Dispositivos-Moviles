@@ -1,14 +1,20 @@
 package com.example.edittext;
 
 import android.content.SyncStatusObserver;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -43,6 +49,24 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("No has seleccionado nada");
             }
         });
+
+        LinearLayout l = findViewById(R.id.mainLayout);
+
+        CheckBox checkbox = findViewById(R.id.cbox);
+
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    l.setBackgroundColor(Color.RED);
+                }else{
+                    l.setBackgroundColor(Color.BLUE);
+                }
+            }
+        });
+
+        RadioGroup rg = findViewById(R.id.radiogroup);
+
 
     }
 }
