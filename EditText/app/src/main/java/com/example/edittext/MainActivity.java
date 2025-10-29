@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         String [] opciones = {"Opción1","Opción2","Opción3","Opción4","Opción5"};
         AutoCompleteTextView texto = findViewById(R.id.comp);
-        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,opciones);
-        
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,opciones);
+        texto.setAdapter(adaptador);
 
     }
 }
