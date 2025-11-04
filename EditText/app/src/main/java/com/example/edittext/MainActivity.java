@@ -3,15 +3,24 @@ package com.example.edittext;
 import android.content.SyncStatusObserver;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -66,6 +75,78 @@ public class MainActivity extends AppCompatActivity {
         });
 
         RadioGroup rg = findViewById(R.id.radiogroup);
+        Button bt = findViewById(R.id.button);
+        TextView t = findViewById(R.id.textview);
+
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selec = rg.getCheckedRadioButtonId();
+
+                if (selec!=-1){
+                    RadioButton abc = findViewById(selec);
+                    String opcion = abc.getText().toString();
+                    t.setText(opcion);
+                }else {
+                    t.setText("No has seleccionado nada");
+                }
+            }
+        });
+
+        Switch b = findViewById(R.id.a);
+
+        b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    texto.setText("encendido");
+                }else {
+                    texto.setText("apagado");
+                }
+            }
+        });
+
+        SeekBar sb = findViewById(R.id.b);
+
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                texto.setText("Valor: "+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        RatingBar rat = findViewById(R.id.ratingbar);
+
+        rat.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                texto.setText("Valoración: "+rating);
+            }
+        });
+
+        ProgressBar pb = findViewById(R.id.pbcircular);
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            int v=0;
+            @Override
+            public void run() {
+                if (v<=100){
+                    pb.setProgress(v+=5);
+                    new Handler(Looper.getMainLooper()).postDelayed(this,200);
+                }
+            };
+        },200);
+
 
 
     }

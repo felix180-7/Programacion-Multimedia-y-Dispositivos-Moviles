@@ -72,4 +72,55 @@
 
     </RadioGroup>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="¿Qué opción has seleccionado?"
+        ></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        ></TextView>
+
+    <Switch
+        android:id="@+id/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="encender/apagar"
+        ></Switch>
+
+    <SeekBar
+        android:id="@+id/b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        ></SeekBar>
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="2.5"></RatingBar>
+
+    <ProgressBar
+        android:id="@+id/pbcircular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyle"
+        android:indeterminate="true"
+        ></ProgressBar>
+
+    <ProgressBar
+        android:id="@+id/pblineal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        ></ProgressBar>
+
 </LinearLayout>
