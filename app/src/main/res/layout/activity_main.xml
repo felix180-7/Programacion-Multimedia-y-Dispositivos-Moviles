@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    android:padding="16dp">
+
+    <!-- Campo para ingresar el nombre del camarero -->
+    <TextView
+        android:id="@+id/tvNombreCamarero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del camarero:"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/etNombreCamarero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe el nombre del camarero"
+        android:importantForAccessibility="yes"/>
+
+    <!-- Campo para ingresar el total de la cuenta -->
+    <TextView
+        android:id="@+id/tvTotalCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total de la cuenta:"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/etTotalCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Total de la cuenta"
+        android:imeOptions="actionNext"
+        android:inputType="numberDecimal"
+        android:importantForAccessibility="yes" />
+
+    <!-- CheckBox para incluir propina -->
+    <CheckBox
+        android:id="@+id/cbPropina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir propina"
+        android:importantForAccessibility="yes"/>
+
+    <!-- Mostrar el porcentaje de la propina -->
+    <TextView
+        android:id="@+id/tvPorcentajePropina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Porcentaje de la propina: 10%"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- SeekBar para ajustar el porcentaje de la propina -->
+    <SeekBar
+        android:id="@+id/sbPropina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10"
+        android:importantForAccessibility="yes" />
+
+    <!-- RadioGroup para elegir el método de pago -->
+    <RadioGroup
+        android:id="@+id/radioGroupMetodoPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbEfectivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Efectivo" />
+
+        <RadioButton
+            android:id="@+id/rbTarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarjeta" />
+    </RadioGroup>
+
+    <!-- RatingBar para calificar el servicio -->
+    <RatingBar
+        android:id="@+id/ratingBarServicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="2.5"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón para calcular el total -->
+    <Button
+        android:id="@+id/btnCalcularTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular Total"
+        android:importantForAccessibility="yes"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView para mostrar el resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado"
+        android:importantForAccessibility="yes"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
