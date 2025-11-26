@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Spinner con imágenes para elegir el artículo -->
+    <Spinner
+        android:id="@+id/spinnerArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Nombre del artículo  -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del artículo"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Cantidad -->
+    <EditText
+        android:id="@+id/etCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Cantidad"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Botón para añadir -->
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir a la lista"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ListView para mostrar la lista de la compra -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
