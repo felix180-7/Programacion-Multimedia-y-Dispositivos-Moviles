@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     // Datos base para el Spinner (nombres + imágenes)
     private String[] nombresSpinner = {"Leche", "Pan", "Huevos"};
     private int[] imagenesSpinner = {
-            R.drawable.ic_leche,   // crea estos drawables
+            R.drawable.ic_leche,
             R.drawable.ic_pan,
             R.drawable.ic_huevos
     };
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configurarSpinner() {
-        // Adaptador personalizado para Spinner con imágenes
+        // Adaptador para el Spinner
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -119,8 +119,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         int cantidad;
+
         try {
             cantidad = Integer.parseInt(cantidadStr);
+            if (cantidad==0){
+                cantidad=1;
+                Toast.makeText(this, "Cantidad no válida, como mínimo 1", Toast.LENGTH_SHORT).show();
+            }
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Cantidad no válida", Toast.LENGTH_SHORT).show();
             return;
@@ -141,9 +146,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        if (v.getId() == R.id.listView) {
             getMenuInflater().inflate(R.menu.menu_contextual, menu);
-        }
     }
 
     @Override
