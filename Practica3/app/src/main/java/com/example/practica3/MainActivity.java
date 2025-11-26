@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
 
     private ArrayList<Item> listaItems;
-    private listaCompraAdapter adapter;
+    private ShoppingListAdapter adapter;
 
     // Datos base para el Spinner (nombres + imágenes)
     private String[] nombresSpinner = {"Leche", "Pan", "Huevos"};
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Lista de la compra
         listaItems = new ArrayList<>();
-        adapter = new listaCompraAdapter(this, listaItems);
+        adapter = new ShoppingListAdapter(this, listaItems);
         listView.setAdapter(adapter);
 
         // Registro para menú contextual

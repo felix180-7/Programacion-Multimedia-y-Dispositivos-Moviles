@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practica3</string>
+    <string name="Artículo">Item</string>
+    <string name="Nombre_del_artículo">Items name</string>
+    <string name="Cantidad">quantity</string>
+    <string name="Añadir_a_la_lista">Add to the list</string>
+    <string name="Añadir">Add</string>
+    <string name="Eliminar">Delete</string>
+</resources>

@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class listaCompraAdapter extends BaseAdapter {
+public class ShoppingListAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<Item> items;
 
-    public listaCompraAdapter(Context context, ArrayList<Item> items) {
+    public ShoppingListAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
         this.items = items;
     }
@@ -48,7 +48,7 @@ public class listaCompraAdapter extends BaseAdapter {
         ViewHolder holder;
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_lista, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_shopping, parent, false);
             holder = new ViewHolder();
             holder.ivImagen = convertView.findViewById(R.id.ivImagen);
             holder.tvNombre = convertView.findViewById(R.id.tvNombre);
