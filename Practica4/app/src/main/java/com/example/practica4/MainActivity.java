@@ -1,6 +1,7 @@
 package com.example.practica4;
 
 import android.Manifest;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
@@ -185,13 +186,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Se crea el canal
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelId, "Eventos", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel(channelId, "Eventos", NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 
         // Se crea la acción que va a ocurrir cuando se toque la notificación
         Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                0,
+                intent,
+                PendingIntent.FLAG_IMMUTABLE
+        );
 
         // Configura la notificación con título, icono, texto y acción al tocarla
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
@@ -204,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         notificationManager.notify((int) System.currentTimeMillis(), builder.build());
         // Muestra la notificación
+
     }
 
     // Muestra un toast personalizado con la información del evento

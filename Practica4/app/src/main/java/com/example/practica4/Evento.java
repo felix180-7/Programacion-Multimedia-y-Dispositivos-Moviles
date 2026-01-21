@@ -1,6 +1,7 @@
 package com.example.practica4;
 
 public class Evento {
+
     private String nombre;
     private String fecha;
     private String hora;
