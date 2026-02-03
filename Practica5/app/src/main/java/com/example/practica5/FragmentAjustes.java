@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 // Fragment de la tercera pestaña
-// Contiene opciones de ajustes
 public class FragmentAjustes extends Fragment {
 
     @Override

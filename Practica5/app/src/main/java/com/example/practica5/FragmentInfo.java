@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 // Fragment de la segunda pestaña
-// Muestra información simple
 public class FragmentInfo extends Fragment {
 
     @Override

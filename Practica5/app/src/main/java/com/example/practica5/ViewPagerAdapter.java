@@ -21,7 +21,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
-    // Método para añadir un fragment y su título
+    // Metodo para añadir fragment y su titulo
     public void addFragment(Fragment fragment, String title) {
         fragmentList.add(fragment);
         fragmentTitleList.add(title);

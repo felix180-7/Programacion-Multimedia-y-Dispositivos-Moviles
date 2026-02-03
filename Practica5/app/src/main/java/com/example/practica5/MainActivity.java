@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         // Conectamos el TabLayout con el ViewPager
         tabLayout.setupWithViewPager(viewPager);
 
-        // Asignamos iconos a cada pestaña (EXTRA)
+        // Asignamos iconos a cada pestaña
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_edit);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_info);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_settings);

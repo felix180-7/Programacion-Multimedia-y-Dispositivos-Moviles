@@ -44,7 +44,7 @@ public class FragmentFormulario extends Fragment {
                 inputLayout.setError(null);
 
                 // Mostramos un Snackbar de confirmación
-                Snackbar.make(view, "Formulario enviado correctamente",
+                Snackbar.make(view, "Enviado correctamente",
                         Snackbar.LENGTH_SHORT).show();
             }
         });
